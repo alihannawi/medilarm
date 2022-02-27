@@ -1,4 +1,4 @@
-package perscholas.controller;
+package perscholas.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class IndexController {
+public class LoginController {
 
-    @RequestMapping(value = { "/" , "/index" } , method = RequestMethod.GET)
+    @RequestMapping(value = { "/login" } , method = RequestMethod.GET)
     public ModelAndView index() throws Exception {
 
         ModelAndView response = new ModelAndView();
-        response.setViewName("index");
+        response.setViewName("login");
 
         return response;
     }
