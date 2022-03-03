@@ -1,6 +1,7 @@
 package perscholas.database.entities;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -13,31 +14,21 @@ import java.util.List;
 public class User {
 
     @Id
-//    @SequenceGenerator(
-//            name = "user_seq" ,
-//            sequenceName = "user_seq" ,
-//            allocationSize = 1
-//    )
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE ,
-//            generator = "user_seq"
-//    )
-//    ^ start 1 increment 1
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "user_id")
+    private int userId;
 
-    @OneToMany(targetEntity = Medicine.class)
-    private List<Medicine> alarms;
+    @NonNull
+    @OneToMany(
+            mappedBy = "user" ,
+            fetch = FetchType.EAGER)
+    private List<UserAlarm> alarms;
 
     @Column(name = "first_name")
     private String firstName;
 
     @Column(name = "last_name")
     private String lastName;
-
-    @Column(name = "gender")
-    private String gender;
 
     @Column(name = "email")
     private String email;
@@ -47,5 +38,4 @@ public class User {
 
     @Column(name = "password")
     private String password;
-
 }

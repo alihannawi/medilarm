@@ -1,11 +1,11 @@
 <html>
 <body>
 <button id="back-button">
-    <a href="./index.html">Back</a>
+    <a href="/index">Back</a>
 </button>
 
 <div id="heading">
-    <h1>LOG IN</h1>
+    <h1>testing</h1>
 </div>
 
 <div id="container">

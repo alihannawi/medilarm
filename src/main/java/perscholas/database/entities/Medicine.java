@@ -1,9 +1,11 @@
 package perscholas.database.entities;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,6 +17,14 @@ public class Medicine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
+//    @NonNull
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "user_id")
+//    private User user;
+
+//    @OneToOne(mappedBy = "medicine")
+//    private UserAlarm alarm;
 
     @Column(name = "brand_name")
     private String brandName;
@@ -28,9 +38,6 @@ public class Medicine {
     @Column(name = "daily_dose")
     private int dailyDose;
 
-    @Column(name = "timeframe")
-    private String timeframe;
-
-    @Column(name = "timeframe_id")
-    private int timeframeId;
+    @Column(name = "medicine_alarm_id")
+    private int medicineAlarmId;
 }
