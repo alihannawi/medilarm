@@ -1,15 +1,17 @@
 package perscholas.database.entities;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "medicine")
 public class Medicine {
 
@@ -18,13 +20,17 @@ public class Medicine {
     @Column(name = "id")
     private int id;
 
-//    @NonNull
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "user_id")
-//    private User user;
+//    @ManyToMany(
+//            mappedBy = "medicines" ,
+//            fetch = FetchType.LAZY
+//    )
+//    private Set<User> users = new HashSet<>();
 
-//    @OneToOne(mappedBy = "medicine")
-//    private UserAlarm alarm;
+    @ManyToMany(mappedBy = "medicines")
+    private Set<User> users;
+
+    @OneToMany(mappedBy = "medicine")
+    private Set<UserMedicine> userMedicines;
 
     @Column(name = "brand_name")
     private String brandName;
@@ -36,8 +42,8 @@ public class Medicine {
     private String dosage;
 
     @Column(name = "daily_dose")
-    private int dailyDose;
-
-    @Column(name = "medicine_alarm_id")
-    private int medicineAlarmId;
+    private String dailyDose;
+//
+//    @Column(name = "timeframe")
+//    private String timeframe;
 }

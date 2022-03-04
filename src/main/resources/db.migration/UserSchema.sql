@@ -1,1 +1,1 @@
-SELECT * FROM casestudy.medicine;
+SELECT * FROM alarmsystem.medicine;

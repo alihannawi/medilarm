@@ -34,14 +34,6 @@
 
                 <br>
 
-                <div id="gender">
-                    <label>Gender</label>
-                    <br/>
-                    <input type="radio" name="gender_r" id="male" /> Male
-                    <input type="radio" name="gender_r" id="female" /> Female
-                    <input type="radio" name="gender_r" id="other" /> Other
-                </div>
-
                 <div id="email">
                     <label>Email</label>
                     <input type="email"
