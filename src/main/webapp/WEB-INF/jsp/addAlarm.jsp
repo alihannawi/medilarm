@@ -1,4 +1,10 @@
 <html>
+
+<head>
+
+    <link rel="stylesheet" href="../../pub/css/medilarm.css" />
+
+</head>
 <body>
 <button id="back-button">
     <a href="index">Back</a>
@@ -27,8 +33,7 @@
             <br>
             <input type="time" name="" id="time-input"/>
             <br>
-            <button type="button"
-            >Add Alarm</button>
+            <button type="button">Add Alarm</button>
 
             <!-- onclick="addAlarm();" -->
         </div>

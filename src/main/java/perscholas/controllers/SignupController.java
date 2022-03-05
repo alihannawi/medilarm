@@ -14,8 +14,14 @@ public class SignupController {
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session) throws Exception {
 
+
         ModelAndView response = new ModelAndView();
-        response.setViewName("register/signup");
+
+//        response.addObject(null , response);
+
+
+
+        response.setViewName("signup");
 
         return response;
     }

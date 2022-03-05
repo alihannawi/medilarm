@@ -15,7 +15,8 @@ public class LoginController {
     public ModelAndView index(HttpServletRequest request, HttpSession session) throws Exception {
 
         ModelAndView response = new ModelAndView();
-        response.setViewName("login/login");
+        response.setViewName("login");
+
         return response;
     }
 

@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class AddAlarmController {
+public class AddCustomAlarmController {
 
-    @RequestMapping(value = "/addAlarm", method = RequestMethod.GET)
+    @RequestMapping(value = "/addCustomAlarm", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session) throws Exception {
 
         ModelAndView response = new ModelAndView();
 
-        response.setViewName("addAlarm");
+        response.setViewName("addCustomAlarm");
         return response;
     }
 }
