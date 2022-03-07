@@ -19,4 +19,27 @@ public class IndexController {
 
         return response;
     }
+
+    @RequestMapping(value = "/userIndex", method = RequestMethod.GET)
+    public ModelAndView userIndex(HttpServletRequest request, HttpSession session) throws Exception {
+
+//        String firstName = request.getParameter("firstName");
+//        String lastName = request.getParameter("lastName");
+//        String email = request.getParameter("email");
+//        String phoneNum = request.getParameter("phoneNum");
+//        String password = request.getParameter("password");
+//
+//        session.setAttribute("firstName" , firstName);
+//        session.setAttribute("lastName" , lastName);
+//        session.setAttribute("email" , email);
+//        session.setAttribute("phoneNum" , phoneNum);
+//        session.setAttribute("password" , password);
+
+        ModelAndView response = new ModelAndView();
+
+        response.setViewName("userIndex");
+
+
+        return response;
+    }
 }

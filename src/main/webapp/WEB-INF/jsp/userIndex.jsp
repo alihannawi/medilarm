@@ -10,11 +10,6 @@
 
     <style>
 
-        * {
-
-            margin-top: 50px;
-        }
-
         .container button , a {
 
             font-size: 50px;
@@ -31,7 +26,7 @@
             text-decoration: none;
         }
 
-        #container button:hover , a:hover {
+        .container button:hover , a:hover {
 
             background-color: #000275;
             color: #bfff70;
@@ -39,22 +34,23 @@
 
     </style>
 
-    <title>MEDILARM</title>
 </head>
 
 <body>
+
+<p class="greeting">Signed in as ${SESSION_KEY}!</p>
 
 <div class="heading">
     <h1>MEDILARM</h1>
 </div>
 
 <div class="container">
-    <button id="signup-button">
-        <a href="signup">Sign Up</a>
+    <button id="set-alarm-button">
+        <a href="/alarmPage">Alarms</a>
     </button>
-    <br />
-    <button id="login-button">
-        <a href="login">Log In</a>
+    <br/>
+    <button id="logout-button">
+        <a href="/logout">Log Out</a>
     </button>
 </div>
 

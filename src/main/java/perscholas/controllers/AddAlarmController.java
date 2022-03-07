@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 public class AddAlarmController {
 
     @RequestMapping(value = "/addAlarm", method = RequestMethod.GET)
-    public ModelAndView index(HttpServletRequest request, HttpSession session) throws Exception {
+    public ModelAndView addAlarm(HttpServletRequest request, HttpSession session) throws Exception {
 
         ModelAndView response = new ModelAndView();
 
