@@ -13,7 +13,7 @@ public class UserMedicine {
 
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

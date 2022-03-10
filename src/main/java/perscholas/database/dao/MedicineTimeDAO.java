@@ -2,13 +2,11 @@ package perscholas.database.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import perscholas.database.entities.Medicine;
+import perscholas.database.entities.MedicineTime;
 
 import java.util.List;
 
-public interface MedicineDAO extends JpaRepository<Medicine, Long> {
+public interface MedicineTimeDAO extends JpaRepository<MedicineTime, Integer> {
 
-    @Override
-    List<Medicine> findAll();
-
-    Medicine findById(Integer id);
+    List<MedicineTime> findAll();
 }

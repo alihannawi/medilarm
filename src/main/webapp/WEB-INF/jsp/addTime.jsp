@@ -14,8 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Oswald:wght@700&display=swap" rel="stylesheet">
 
     <style>
-
-        form {
+        label , #set-time {
 
             font-size: 30px;
             background-color: #808080;
@@ -23,12 +22,12 @@
             font-family: 'Oswald', sans-serif;
         }
 
-        form select {
+        input {
 
             font-size: 30px;
         }
 
-        form input {
+        .container button , form button a {
 
             font-size: 30px;
             font-family: 'Oswald', sans-serif;
@@ -41,32 +40,38 @@
             height: 50px;
             text-decoration: none;
         }
-
     </style>
 
 </head>
 <body>
+
 <button class="back-button">
-    <a href="index">Back</a>
+    <a href="/addAlarm">Back</a>
 </button>
 
 <div id="subheading" class="heading">
     <h1>ADD ALARM</h1>
 </div>
-<div class="container">
-        <form action="/addTime/1" method="GET">
 
-                Select a Medicine:&nbsp;
-                <select name="medicine-select">
-                    <c:forEach items="${medicines}" var="med">
-                        <option value="${med.id}">${med.brandName}</option>
-                    </c:forEach>
-                </select>
-                <br/><br/>
-                <input type="submit" value="Submit" />
-                <br>
-        </form>
-</div>
+    <div class="container">
+        <label>${medBrandName}</label>
+        <br>
+
+        <div id="set-time">
+
+            <p>${medTimeframe}</p>
+
+            <label>What time(s) would you like to take this medicine?</label>
+            <br>
+            <input type="time" name="" id="time-input"/>
+            <br>
+            <button type="button">
+                <a href="/addTimeSuccess">Add Alarm</a>
+            </button>
+
+            <!-- onclick="addAlarm();" -->
+        </div>
+    </div>
 
 <br />
 </body>

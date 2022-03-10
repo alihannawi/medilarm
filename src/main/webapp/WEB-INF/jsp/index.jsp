@@ -1,6 +1,11 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<jsp:include page="include/header.jsp" />
+
 <html>
 
 <head>
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="../../pub/css/medilarm.css" />
 
@@ -50,13 +55,15 @@
 
 <div class="container">
     <button id="signup-button">
-        <a href="signup">Sign Up</a>
+        <a href="/signup">Sign Up</a>
     </button>
     <br />
     <button id="login-button">
-        <a href="login">Log In</a>
+        <a href="/login/login">Log In</a>
     </button>
 </div>
 
 </body>
 </html>
+
+<jsp:include page="include/footer.jsp" />

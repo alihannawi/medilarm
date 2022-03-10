@@ -1,36 +1,21 @@
 package perscholas.database.entities;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "medicine")
-public class Medicine {
+@Table(name = "medicine_time")
+public class MedicineTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
-//    @ManyToMany(
-//            mappedBy = "medicines" ,
-//            fetch = FetchType.LAZY
-//    )
-//    private Set<User> users = new HashSet<>();
-
-    @ManyToMany(mappedBy = "medicines")
-    private Set<User> users;
-
-    @OneToMany(mappedBy = "medicine")
-    private Set<UserMedicine> userMedicines;
 
     @Column(name = "brand_name")
     private String brandName;
@@ -46,4 +31,7 @@ public class Medicine {
 
     @Column(name = "timeframe")
     private String timeframe;
+
+    @Column(name = "timestamp")
+    private String timestamp;
 }

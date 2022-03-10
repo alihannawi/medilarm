@@ -1,8 +1,9 @@
-<%--<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 
 <head>
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="../../pub/css/medilarm.css" />
 
@@ -26,7 +27,7 @@
 
         }
 
-        .firstName , .lastName , .email , .phone-num , .password , label {
+        .firstName , .lastName , .email , .username , .password , label {
 
             background-color: #808080;
         }
@@ -72,9 +73,15 @@
             text-decoration: none;
         }
     </style>
+
+    <script src="../../pub/js/script.js" type="text/javascript">
+
+
+    </script>
 </head>
     <body>
-        <form method="GET" action="/signupSuccess">
+        <form method="GET" action="/register/registerSubmit"  onsubmit="return validation();">
+            <input type="hidden" name="id" value="${formBeanKey.id}">
 
             <button class="back-button">
                 <a href="index">Back</a>
@@ -88,47 +95,36 @@
 
                 <div class="firstName">
                     <label>First Name</label>
-                    <input type="text" name="firstName"
-<%--                           pattern="/^[a-z ,.'-]+$/i" --%>
-                           required>
+                    <input type="text" name="firstName" value="${formBeanKey.firstName}">
                 </div>
 
                 <br>
 
                 <div class="lastName">
                     <label>Last Name</label>
-                    <input type="text" name="lastName"
-<%--                           pattern="/^[a-z ,.'-]+$/i" --%>
-                           required />
+                    <input type="text" name="lastName" value="${formBeanKey.lastName}">
                 </div>
 
                 <br>
 
                 <div class="email">
                     <label>Email</label>
-                    <input type="email" name="email"
-<%--                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"--%>
-                            required/>
+                    <input type="text" name="email" value="${formBeanKey.email}">
                 </div>
 
                 <br>
 
-                <div class="phone-num">
-                    <label>Phone Number</label>
-                    <input type="tel"
-                            id="phone" name="phoneNum"
-<%--                            pattern="^((){0,1}\d{3}[)-.]{1,2}\d{3}[-.]\d{4}$"--%>
-                            required/>
+                <div class="username">
+                    <label>Username</label>
+                    <input type="text" name="username" value="${formBeanKey.username}">
                 </div>
 
                 <br>
 
-                <div class="password">
+                <div class="password" >
                     <label>Password</label>
-                    <input type="password" name="password"
-<%--                            pattern="^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$"--%>
-                            required/>
-                    <!-- minimum 8 characters, must include one uppercase and one lowercase letter, as well as one number -->
+                    <input type="password" name="password" onclick="this.value = '';"
+                           value="${formBeanKey.password}">
                 </div>
 
                 <button type="submit">Submit</button>

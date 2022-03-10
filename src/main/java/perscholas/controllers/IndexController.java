@@ -1,5 +1,7 @@
 package perscholas.controllers;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,11 +13,22 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = { "/" , "/index" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session) throws Exception {
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         ModelAndView response = new ModelAndView();
-        response.setViewName("index");
+
+        if (authentication == null) {
+
+            response.setViewName("/index");
+        } else {
+
+            String username = authentication.getName();
+            response.addObject("username" , username);
+            response.setViewName("redirect:/userIndex");
+        }
 
         return response;
     }
@@ -35,10 +48,24 @@ public class IndexController {
 //        session.setAttribute("phoneNum" , phoneNum);
 //        session.setAttribute("password" , password);
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         ModelAndView response = new ModelAndView();
+
+        String username = authentication.getName();
+        response.addObject("username" , username);
 
         response.setViewName("userIndex");
 
+        return response;
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView logout(HttpServletRequest request, HttpSession session) throws Exception {
+
+        ModelAndView response = new ModelAndView();
+
+        response.setViewName("index");
 
         return response;
     }

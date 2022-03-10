@@ -1,6 +1,11 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<jsp:include page="include/header.jsp" />
+
 <html>
 
 <head>
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="../../pub/css/medilarm.css" />
 
@@ -24,7 +29,7 @@
 
         }
 
-        .email , .password , label {
+        .username, .password , label {
 
             background-color: #808080;
         }
@@ -70,19 +75,19 @@
 
 <body>
 <button class="back-button">
-    <a href="/index">Back</a>
+    <a href="/login/logout">Back</a>
 </button>
 
 <div id="subheading" class="heading">
     <h1>LOGIN</h1>
 </div>
 
-<form action="/loginSubmit">
+<form action="/login/loginSecurityPost" method="post">
     <div class="container">
         <form action="index">
-            <div class="email">
-                <label>Email</label>
-                <input type="email" name="email"
+            <div class="Username">
+                <label>Username</label>
+                <input type="text" name="username"
                 <%--                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"--%>
                        required/>
             </div>
@@ -102,3 +107,5 @@
 
 </body>
 </html>
+
+<jsp:include page="include/footer.jsp" />

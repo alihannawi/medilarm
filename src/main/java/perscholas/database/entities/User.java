@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @ManyToMany
     @JoinTable(
@@ -43,8 +43,8 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
